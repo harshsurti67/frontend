@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://your-backend-app.onrender.com/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://kidoo-backend-5.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
