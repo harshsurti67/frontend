@@ -1,0 +1,47 @@
+/* Events Page Background Elements */
+.events-background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Floating Speech Bubbles */
+.floating-bubble {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.bubble-1 {
+  top: 20%;
+  left: 10%;
+}
+
+.bubble-2 {
+  top: 50%;
+  right: 15%;
+}
+
+.bubble-3 {
+  top: 70%;
+  left: 20%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-bubble {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-bubble {
+    font-size: 1.2rem;
+  }
+}

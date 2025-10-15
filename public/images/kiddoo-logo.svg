@@ -1,0 +1,32 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Decorative elements around the child -->
+  <circle cx="50" cy="100" r="8" fill="#1E88E5"/>
+  <circle cx="150" cy="100" r="8" fill="#E53935"/>
+  <path d="M 80 40 L 90 35 L 95 45 L 85 50 Z" fill="#FDD835"/>
+  <circle cx="120" cy="160" r="6" fill="#43A047"/>
+  <path d="M 40 60 Q 50 50 60 60" stroke="#FB8C00" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 140 60 Q 150 50 160 60" stroke="#43A047" stroke-width="6" fill="none" stroke-linecap="round"/>
+  
+  <!-- Child's face -->
+  <circle cx="100" cy="105" r="45" fill="#FDBCB4"/>
+  
+  <!-- Hair -->
+  <path d="M 55 90 Q 100 50 145 90" fill="#FF9800"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="85" cy="100" rx="4" ry="6" fill="#1a237e"/>
+  <ellipse cx="115" cy="100" rx="4" ry="6" fill="#1a237e"/>
+  
+  <!-- Nose -->
+  <circle cx="100" cy="110" r="2" fill="#1a237e"/>
+  
+  <!-- Smile -->
+  <path d="M 85 120 Q 100 130 115 120" stroke="#1a237e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Ears -->
+  <ellipse cx="60" cy="105" rx="8" ry="12" fill="#FDBCB4"/>
+  <ellipse cx="140" cy="105" rx="8" ry="12" fill="#FDBCB4"/>
+  
+  <!-- Arc above head -->
+  <path d="M 60 60 Q 100 30 140 60" stroke="#43A047" stroke-width="15" fill="none" stroke-linecap="round"/>
+</svg>

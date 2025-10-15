@@ -1,0 +1,83 @@
+/* Programs Page Background Elements */
+.programs-background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Floating Books */
+.floating-book {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.book-1 {
+  top: 15%;
+  left: 8%;
+}
+
+.book-2 {
+  top: 60%;
+  right: 10%;
+}
+
+/* Floating Pencils */
+.floating-pencil {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.pencil-1 {
+  top: 30%;
+  right: 15%;
+}
+
+.pencil-2 {
+  top: 70%;
+  left: 12%;
+}
+
+/* Floating ABC */
+.floating-abc {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.abc-1 {
+  top: 45%;
+  left: 5%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-book,
+  .floating-abc {
+    font-size: 2rem;
+  }
+  
+  .floating-pencil {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-book,
+  .floating-abc {
+    font-size: 1.5rem;
+  }
+  
+  .floating-pencil {
+    font-size: 1.2rem;
+  }
+}

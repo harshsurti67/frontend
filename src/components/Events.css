@@ -1,0 +1,372 @@
+/* Events Section Styles */
+.events-section {
+  padding: 80px 0;
+  background: white;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-indigo);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.events-container {
+  margin-bottom: 3rem;
+}
+
+.event-card {
+  border: none;
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  background: white;
+  position: relative;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.event-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.1);
+}
+
+.event-date-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+  color: white;
+  padding: 0.8rem;
+  border-radius: var(--radius-medium);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-medium);
+  backdrop-filter: blur(10px);
+}
+
+.date-icon {
+  font-size: 1.2rem;
+}
+
+.date-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.date-day {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: var(--font-playful);
+}
+
+.date-month {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.event-content {
+  padding: 2rem;
+}
+
+.event-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent-indigo);
+  margin-bottom: 1rem;
+  font-family: var(--font-playful);
+}
+
+.event-description {
+  color: var(--dark-gray);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-time,
+.event-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary-teal);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.meta-icon {
+  font-size: 0.9rem;
+  color: var(--primary-blue);
+}
+
+.btn-event-details {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+  border: none;
+  border-radius: var(--radius-medium);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-event-details:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  color: white;
+}
+
+.events-cta {
+  text-align: center;
+}
+
+.btn-view-all-events {
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  background: transparent;
+  border-radius: var(--radius-medium);
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-view-all-events:hover {
+  background: var(--primary-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .events-section {
+    padding: 70px 0;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .events-section {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .event-image-container {
+    height: 180px;
+  }
+  
+  .event-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .events-section {
+    padding: 50px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .event-image-container {
+    height: 160px;
+  }
+  
+  .event-content {
+    padding: 1.2rem;
+  }
+  
+  .event-title {
+    font-size: 1.2rem;
+  }
+  
+  .event-description {
+    font-size: 0.9rem;
+  }
+  
+  .event-date-badge {
+    padding: 0.6rem;
+  }
+  
+  .date-day {
+    font-size: 1rem;
+  }
+  
+  .date-month {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .events-section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .event-image-container {
+    height: 140px;
+  }
+  
+  .event-content {
+    padding: 1rem;
+  }
+  
+  .event-title {
+    font-size: 1.1rem;
+  }
+  
+  .event-description {
+    font-size: 0.85rem;
+  }
+  
+  .event-date-badge {
+    padding: 0.5rem;
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+  
+  .date-day {
+    font-size: 0.9rem;
+  }
+  
+  .date-month {
+    font-size: 0.65rem;
+  }
+  
+  .btn-event-details {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-view-all-events {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for date badge */
+.event-date-badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Special effects for different event cards */
+.event-card:nth-child(1) .event-date-badge {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+}
+
+.event-card:nth-child(2) .event-date-badge {
+  background: linear-gradient(135deg, var(--warm-yellow), var(--soft-pink));
+}
+
+.event-card:nth-child(3) .event-date-badge {
+  background: linear-gradient(135deg, var(--accent-indigo), var(--primary-blue));
+}

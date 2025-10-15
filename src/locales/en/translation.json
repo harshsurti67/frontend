@@ -1,0 +1,218 @@
+{
+  "navbar": {
+    "home": "Home",
+    "programs": "Programs",
+    "gallery": "Gallery",
+    "events": "Events",
+    "blog": "Blog",
+    "about": "About Us",
+    "admissions": "Admissions",
+    "contact": "Contact",
+    "enroll": "Enroll Now"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to Kiddoo Preschool",
+      "subtitle": "Where Learning Begins with Joy",
+      "description": "Nurturing young minds with love, care, and innovative learning methods. Your child's first step towards a bright future.",
+      "cta": "Explore Programs",
+      "slides": {
+        "slide1": {
+          "title": "Welcome to Kidoo Preschool",
+          "subtitle": "Where Learning Begins with Love",
+          "description": "Nurturing young minds with innovative programs, caring teachers, and a safe environment where every child can thrive and discover their potential.",
+          "button_text": "Explore Programs"
+        },
+        "slide2": {
+          "title": "Quality Education",
+          "subtitle": "Building Bright Futures",
+          "description": "Our comprehensive curriculum combines play-based learning with academic excellence, preparing children for success in school and life.",
+          "button_text": "Learn More"
+        },
+        "slide3": {
+          "title": "Safe & Caring Environment",
+          "subtitle": "Where Every Child Matters",
+          "description": "We provide a nurturing atmosphere where children feel secure, valued, and encouraged to explore, learn, and grow at their own pace.",
+          "button_text": "Visit Us"
+        }
+      }
+    },
+    "programs": {
+      "title": "Our Programs",
+      "subtitle": "Age-appropriate learning experiences"
+    },
+    "about": {
+      "title": "About Kiddoo Preschool",
+      "subtitle": "Creating a foundation for lifelong learning"
+    },
+    "testimonials": {
+      "title": "What Parents Say",
+      "subtitle": "Trusted by families in our community"
+    }
+  },
+  "programs": {
+    "title": "Our Programs",
+    "subtitle": "Comprehensive learning experiences for every age group",
+    "toddler": {
+      "title": "Toddler Program",
+      "age": "Ages 2-3",
+      "description": "Gentle introduction to structured learning through play and exploration."
+    },
+    "preschool": {
+      "title": "Preschool Program", 
+      "age": "Ages 3-4",
+      "description": "Building foundational skills through interactive activities and creative play."
+    },
+    "prek": {
+      "title": "Pre-K Program",
+      "age": "Ages 4-5", 
+      "description": "Preparing for kindergarten with advanced learning and social development."
+    }
+  },
+  "admissions": {
+    "title": "Student Admission Form",
+    "subtitle": "Complete the form below to apply for admission to Kiddoo Preschool. All fields marked with * are required.",
+    "steps": {
+      "student_info": "Student Information",
+      "parent_info": "Parent/Guardian Information", 
+      "program_info": "Program Information",
+      "address_info": "Address Information",
+      "emergency_contact": "Emergency Contact"
+    },
+    "form": {
+      "student_first_name": "Student First Name",
+      "student_last_name": "Student Last Name",
+      "student_date_of_birth": "Student Date of Birth",
+      "student_gender": "Student Gender",
+      "parent_first_name": "Parent First Name",
+      "parent_last_name": "Parent Last Name",
+      "parent_email": "Parent Email",
+      "parent_phone": "Parent Phone",
+      "parent_relationship": "Parent Relationship",
+      "preferred_program": "Preferred Program",
+      "preferred_start_date": "Preferred Start Date",
+      "current_school": "Current School",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "zip_code": "Zip Code",
+      "emergency_contact_name": "Emergency Contact Name",
+      "emergency_contact_phone": "Emergency Contact Phone",
+      "emergency_contact_relationship": "Emergency Contact Relationship"
+    },
+    "buttons": {
+      "previous": "← Previous",
+      "next": "Next →",
+      "review_submit": "📋 Review & Submit",
+      "submit_application": "🎉 Submit Application",
+      "submitting": "⏳ Submitting..."
+    },
+    "success": {
+      "title": "Application Submitted Successfully!",
+      "message": "Thank you for your interest in Kiddoo Preschool. We have received your application and will contact you within 2-3 business days.",
+      "submit_another": "Submit Another Application"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions"
+    }
+  },
+  "footer": {
+    "about": "About Us",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Information",
+    "follow_us": "Follow Us",
+    "rights": "All rights reserved."
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Creating a foundation for lifelong learning",
+    "description": "Learn more about our mission, values, and commitment to providing quality early childhood education.",
+    "mission": "Our Mission",
+    "mission_text": "To provide a nurturing, safe, and stimulating environment where children can grow, learn, and develop to their full potential.",
+    "vision": "Our Vision",
+    "vision_text": "To be the leading preschool that inspires young minds and prepares them for a bright future.",
+    "values": "Our Values",
+    "values_list": [
+      "Child-centered learning",
+      "Safe and nurturing environment",
+      "Qualified and caring teachers",
+      "Parent partnership",
+      "Innovative curriculum"
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us",
+    "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "info": {
+      "address": "Visit Us",
+      "phone": "Call Us",
+      "email": "Email Us",
+      "hours": "Opening Hours"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "See our children in action",
+    "description": "Take a look at our wonderful moments and activities at Kiddoo Preschool."
+  },
+  "events": {
+    "title": "Events",
+    "subtitle": "Upcoming events and activities",
+    "description": "Stay updated with our latest events and activities for children and parents.",
+    "upcoming": "Upcoming Events",
+    "past": "Past Events"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Latest news and insights",
+    "description": "Read our latest articles about early childhood education and parenting tips.",
+    "read_more": "Read More",
+    "published": "Published on"
+  },
+  "testimonials": {
+    "title": "What Parents Say",
+    "subtitle": "Trusted by families in our community",
+    "description": "Hear from parents about their experience with Kiddoo Preschool."
+  },
+  "stats": {
+    "children": "Happy Children",
+    "teachers": "Qualified Teachers",
+    "years": "Years Experience",
+    "programs": "Programs Offered"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "required": "Required",
+    "optional": "Optional",
+    "read_more": "Read More",
+    "learn_more": "Learn More",
+    "get_started": "Get Started",
+    "contact_us": "Contact Us",
+    "view_all": "View All",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "open": "Open",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh"
+  }
+}

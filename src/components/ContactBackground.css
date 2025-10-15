@@ -1,0 +1,86 @@
+/* Contact Page Background Elements */
+.contact-background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Floating Chat Bubbles */
+.floating-chat {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.chat-1 {
+  top: 15%;
+  left: 8%;
+}
+
+.chat-2 {
+  top: 50%;
+  right: 12%;
+}
+
+.chat-3 {
+  top: 70%;
+  left: 15%;
+}
+
+/* Contact Wave Divider */
+.contact-wave-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.contact-wave-divider svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-chat {
+    font-size: 1.5rem;
+  }
+  
+  .contact-wave-divider {
+    height: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-chat {
+    font-size: 1.2rem;
+  }
+  
+  .contact-wave-divider {
+    height: 60px;
+  }
+}
+
+/* Glowing Input Effects */
+.glowing-input:focus {
+  border-color: #87CEEB !important;
+  box-shadow: 0 0 20px rgba(135, 206, 235, 0.5) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  outline: none !important;
+}
+
+.glowing-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}

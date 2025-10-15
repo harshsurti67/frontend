@@ -1,0 +1,93 @@
+/* Gallery Page Background Elements */
+.gallery-background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Floating Cameras */
+.floating-camera {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.camera-1 {
+  top: 15%;
+  left: 8%;
+}
+
+.camera-2 {
+  top: 60%;
+  right: 10%;
+}
+
+/* Floating Pictures */
+.floating-picture {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.picture-1 {
+  top: 30%;
+  right: 15%;
+}
+
+/* Floating Palette */
+.floating-palette {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.palette-1 {
+  top: 45%;
+  left: 5%;
+}
+
+/* Floating Frame */
+.floating-frame {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.frame-1 {
+  top: 70%;
+  left: 12%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-camera,
+  .floating-palette {
+    font-size: 2rem;
+  }
+  
+  .floating-picture,
+  .floating-frame {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-camera,
+  .floating-palette {
+    font-size: 1.5rem;
+  }
+  
+  .floating-picture,
+  .floating-frame {
+    font-size: 1.2rem;
+  }
+}

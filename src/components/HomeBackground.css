@@ -1,0 +1,160 @@
+/* Home Background Elements */
+.home-background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Floating Clouds */
+.floating-cloud {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.cloud-1 {
+  top: 10%;
+  left: 5%;
+}
+
+.cloud-2 {
+  top: 30%;
+  right: 8%;
+}
+
+.cloud-3 {
+  top: 60%;
+  left: 15%;
+}
+
+/* Floating Balloons */
+.floating-balloon {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.balloon-1 {
+  top: 20%;
+  left: 10%;
+}
+
+.balloon-2 {
+  top: 50%;
+  right: 12%;
+}
+
+.balloon-3 {
+  top: 70%;
+  left: 8%;
+}
+
+/* Floating Kites */
+.floating-kite {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.kite-1 {
+  top: 15%;
+  right: 20%;
+}
+
+.kite-2 {
+  top: 65%;
+  right: 5%;
+}
+
+/* Floating Stars */
+.floating-star {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.star-1 {
+  top: 25%;
+  left: 25%;
+}
+
+.star-2 {
+  top: 45%;
+  right: 30%;
+}
+
+.star-3 {
+  top: 75%;
+  left: 35%;
+}
+
+/* Wave Dividers */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.wave-divider svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-cloud {
+    font-size: 2rem;
+  }
+  
+  .floating-balloon {
+    font-size: 2rem;
+  }
+  
+  .floating-kite {
+    font-size: 1.5rem;
+  }
+  
+  .floating-star {
+    font-size: 1.2rem;
+  }
+  
+  .wave-divider {
+    height: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-cloud {
+    font-size: 1.5rem;
+  }
+  
+  .floating-balloon {
+    font-size: 1.5rem;
+  }
+  
+  .floating-kite {
+    font-size: 1.2rem;
+  }
+  
+  .floating-star {
+    font-size: 1rem;
+  }
+  
+  .wave-divider {
+    height: 60px;
+  }
+}
