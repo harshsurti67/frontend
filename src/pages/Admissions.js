@@ -592,15 +592,19 @@ const Admissions = () => {
               <div style={{ 
                 display: 'flex', 
                 justifyContent: 'space-between', 
-                marginBottom: '1.5rem' 
+                marginBottom: '1.5rem',
+                flexWrap: 'wrap',
+                gap: '0.5rem'
               }}>
                 {formSteps.map((step, index) => (
                   <motion.div 
                     key={index} 
                     style={{ 
-                      flex: 1, 
+                      flex: '1 1 calc(20% - 0.5rem)',
+                      minWidth: '120px',
                       textAlign: 'center',
-                      opacity: activeStep >= index ? 1 : 0.5
+                      opacity: activeStep >= index ? 1 : 0.5,
+                      marginBottom: '1rem'
                     }}
                     animate={{
                       scale: activeStep === index ? 1.1 : 1,
@@ -610,8 +614,8 @@ const Admissions = () => {
                   >
                     <motion.div 
                       style={{
-                        width: '60px',
-                        height: '60px',
+                        width: '50px',
+                        height: '50px',
                         borderRadius: '50%',
                         background: activeStep >= index 
                           ? 'linear-gradient(135deg, #1E40AF, #3B82F6, #60A5FA)' 
@@ -622,7 +626,7 @@ const Admissions = () => {
                         justifyContent: 'center',
                         margin: '0 auto 0.5rem',
                         fontWeight: 'bold',
-                        fontSize: '1.3rem',
+                        fontSize: '1.1rem',
                         boxShadow: activeStep >= index 
                           ? '0 10px 30px rgba(30, 64, 175, 0.5), 0 0 0 2px rgba(255,255,255,0.4)' 
                           : '0 6px 20px rgba(0,0,0,0.2)',
@@ -638,12 +642,16 @@ const Admissions = () => {
                     </motion.div>
                     <motion.small 
                       style={{ 
-                        fontSize: '0.9rem', 
+                        fontSize: '0.75rem', 
                         color: activeStep >= index ? '#1A202C' : '#6B7280',
                         fontWeight: activeStep >= index ? '700' : '500',
                         textShadow: activeStep >= index ? '1px 1px 2px rgba(255,255,255,0.8)' : 'none',
                         position: 'relative',
-                        zIndex: 10
+                        zIndex: 10,
+                        display: 'block',
+                        lineHeight: '1.2',
+                        wordWrap: 'break-word',
+                        hyphens: 'auto'
                       }}
                       animate={{
                         color: activeStep >= index ? '#1A202C' : '#6B7280'
@@ -747,7 +755,7 @@ const Admissions = () => {
             {/* Form Fields */}
             <Row style={{ position: 'relative', zIndex: 2 }}>
               {formSteps[activeStep].fields.map((fieldName, fieldIndex) => (
-                <Col md={6} key={fieldName} style={{ marginBottom: '1.5rem' }}>
+                <Col xs={12} md={6} key={fieldName} style={{ marginBottom: '1.5rem' }}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -1068,42 +1076,116 @@ const Admissions = () => {
             {/* Navigation Buttons */}
             <div style={{ 
               display: 'flex', 
-              justifyContent: 'space-between', 
-              alignItems: 'center',
+              flexDirection: 'column',
+              gap: '1rem',
               marginTop: '3rem',
               position: 'relative',
               zIndex: 2
             }}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  variant="outline-primary"
-                  onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
-                  disabled={activeStep === 0}
-                  style={{ 
-                    borderRadius: '25px', 
-                    padding: '15px 40px',
-                    border: activeStep === 0 ? '2px solid #999' : '3px solid #1E40AF',
-                    color: activeStep === 0 ? '#666' : '#1E40AF',
-                    background: activeStep === 0 ? 'rgba(200, 200, 200, 0.2)' : 'linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(59, 130, 246, 0.1))',
-                    fontSize: '1.1rem',
-                    fontWeight: '700',
-                    boxShadow: activeStep === 0 ? '0 4px 15px rgba(0,0,0,0.1)' : '0 10px 30px rgba(30, 64, 175, 0.4), 0 0 0 1px rgba(255,255,255,0.2)',
-                    transition: 'all 0.3s ease',
-                    opacity: activeStep === 0 ? 0.6 : 1,
-                    cursor: activeStep === 0 ? 'not-allowed' : 'pointer',
-                    textShadow: activeStep === 0 ? 'none' : '1px 1px 2px rgba(255,255,255,0.8)',
-                    position: 'relative',
-                    zIndex: 10
-                  }}
+              {/* Mobile-first button layout */}
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '0.5rem'
+              }}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{ flex: '1 1 auto', minWidth: '120px' }}
                 >
-{t('admissions.buttons.previous')}
-                </Button>
-              </motion.div>
+                  <Button
+                    variant="outline-primary"
+                    onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
+                    disabled={activeStep === 0}
+                    style={{ 
+                      borderRadius: '25px', 
+                      padding: '12px 20px',
+                      border: activeStep === 0 ? '2px solid #999' : '3px solid #1E40AF',
+                      color: activeStep === 0 ? '#666' : '#1E40AF',
+                      background: activeStep === 0 ? 'rgba(200, 200, 200, 0.2)' : 'linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(59, 130, 246, 0.1))',
+                      fontSize: '0.9rem',
+                      fontWeight: '700',
+                      boxShadow: activeStep === 0 ? '0 4px 15px rgba(0,0,0,0.1)' : '0 10px 30px rgba(30, 64, 175, 0.4), 0 0 0 1px rgba(255,255,255,0.2)',
+                      transition: 'all 0.3s ease',
+                      opacity: activeStep === 0 ? 0.6 : 1,
+                      cursor: activeStep === 0 ? 'not-allowed' : 'pointer',
+                      textShadow: activeStep === 0 ? 'none' : '1px 1px 2px rgba(255,255,255,0.8)',
+                      position: 'relative',
+                      zIndex: 10,
+                      width: '100%'
+                    }}
+                  >
+                    {t('admissions.buttons.previous')}
+                  </Button>
+                </motion.div>
+                
+                {activeStep < formSteps.length - 1 ? (
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{ flex: '1 1 auto', minWidth: '120px' }}
+                  >
+                    <Button
+                      variant="primary"
+                      onClick={() => setActiveStep(Math.min(formSteps.length - 1, activeStep + 1))}
+                      style={{ 
+                        background: 'linear-gradient(135deg, #1E40AF, #3B82F6, #60A5FA)',
+                        border: '3px solid #1E40AF',
+                        borderRadius: '25px', 
+                        padding: '12px 20px',
+                        fontSize: '0.9rem',
+                        fontWeight: '700',
+                        boxShadow: '0 10px 30px rgba(30, 64, 175, 0.4), 0 0 0 1px rgba(255,255,255,0.2)',
+                        transition: 'all 0.3s ease',
+                        color: '#FFFFFF',
+                        textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+                        position: 'relative',
+                        zIndex: 10,
+                        width: '100%'
+                      }}
+                    >
+                      {t('admissions.buttons.next')}
+                    </Button>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{ flex: '1 1 auto', minWidth: '120px' }}
+                  >
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      disabled={loading}
+                      style={{ 
+                        background: loading 
+                          ? 'linear-gradient(135deg, #ccc, #999)' 
+                          : 'linear-gradient(135deg, #059669, #10B981, #34D399)',
+                        border: loading ? '2px solid #999' : '3px solid #059669',
+                        borderRadius: '25px', 
+                        padding: '12px 20px',
+                        fontSize: '0.9rem',
+                        fontWeight: '700',
+                        boxShadow: loading 
+                          ? '0 4px 15px rgba(0,0,0,0.1)' 
+                          : '0 10px 30px rgba(5, 150, 105, 0.4), 0 0 0 1px rgba(255,255,255,0.2)',
+                        transition: 'all 0.3s ease',
+                        color: '#FFFFFF',
+                        textShadow: loading ? 'none' : '1px 1px 2px rgba(0,0,0,0.3)',
+                        position: 'relative',
+                        zIndex: 10,
+                        width: '100%'
+                      }}
+                    >
+                      {loading ? t('admissions.buttons.submitting') : t('admissions.buttons.submit_application')}
+                    </Button>
+                  </motion.div>
+                )}
+              </div>
               
-              {/* Review & Submit Button */}
+              {/* Review & Submit Button - Full width on mobile */}
               {activeStep < formSteps.length - 1 && (
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -1114,79 +1196,21 @@ const Admissions = () => {
                     onClick={() => setActiveStep(formSteps.length - 1)}
                     style={{ 
                       borderRadius: '25px', 
-                      padding: '15px 40px',
+                      padding: '12px 20px',
                       border: '3px solid #059669',
                       color: '#059669',
                       background: 'linear-gradient(135deg, rgba(5, 150, 105, 0.15), rgba(16, 185, 129, 0.1))',
-                      fontSize: '1.1rem',
+                      fontSize: '0.9rem',
                       fontWeight: '700',
                       boxShadow: '0 10px 30px rgba(5, 150, 105, 0.3), 0 0 0 1px rgba(255,255,255,0.2)',
                       transition: 'all 0.3s ease',
                       textShadow: '1px 1px 2px rgba(255,255,255,0.8)',
                       position: 'relative',
-                      zIndex: 10
+                      zIndex: 10,
+                      width: '100%'
                     }}
                   >
-{t('admissions.buttons.review_submit')}
-                  </Button>
-                </motion.div>
-              )}
-              
-              {activeStep < formSteps.length - 1 ? (
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    variant="primary"
-                    onClick={() => setActiveStep(Math.min(formSteps.length - 1, activeStep + 1))}
-                    style={{ 
-                      background: 'linear-gradient(135deg, #1E40AF, #3B82F6, #60A5FA)',
-                      border: '3px solid #1E40AF',
-                      borderRadius: '25px', 
-                      padding: '15px 40px',
-                      fontSize: '1.1rem',
-                      fontWeight: '700',
-                      boxShadow: '0 10px 30px rgba(30, 64, 175, 0.4), 0 0 0 1px rgba(255,255,255,0.2)',
-                      transition: 'all 0.3s ease',
-                      color: '#FFFFFF',
-                      textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
-                      position: 'relative',
-                      zIndex: 10
-                    }}
-                  >
-{t('admissions.buttons.next')}
-                  </Button>
-                </motion.div>
-              ) : (
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    disabled={loading}
-                    style={{ 
-                      background: loading 
-                        ? 'linear-gradient(135deg, #ccc, #999)' 
-                        : 'linear-gradient(135deg, #059669, #10B981, #34D399)',
-                      border: loading ? '2px solid #999' : '3px solid #059669',
-                      borderRadius: '25px', 
-                      padding: '15px 40px',
-                      fontSize: '1.1rem',
-                      fontWeight: '700',
-                      boxShadow: loading 
-                        ? '0 4px 15px rgba(0,0,0,0.1)' 
-                        : '0 10px 30px rgba(5, 150, 105, 0.4), 0 0 0 1px rgba(255,255,255,0.2)',
-                      transition: 'all 0.3s ease',
-                      color: '#FFFFFF',
-                      textShadow: loading ? 'none' : '1px 1px 2px rgba(0,0,0,0.3)',
-                      position: 'relative',
-                      zIndex: 10
-                    }}
-                  >
-{loading ? t('admissions.buttons.submitting') : t('admissions.buttons.submit_application')}
+                    📋 {t('admissions.buttons.review_submit')}
                   </Button>
                 </motion.div>
               )}
