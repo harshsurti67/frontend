@@ -129,11 +129,25 @@
 .mobile-menu {
   background: white;
   width: 300px;
-  height: 100%;
+  /* Use dynamic viewport height to avoid mobile browser chrome issues */
+  height: 100dvh;
+  max-height: 100dvh;
   padding: 2rem;
   box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  /* Allow scrolling when content exceeds height so links don't overflow */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Extra bottom padding for safe areas on iOS */
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+}
+
+/* Ensure the navigation list itself takes remaining space and scrolls */
+.mobile-menu .nav {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu-header {
@@ -189,6 +203,14 @@
   margin-top: auto;
   padding-top: 2rem;
   border-top: 1px solid var(--light-gray);
+  /* Keep the CTA within the white panel and visible */
+  position: sticky;
+  bottom: 0;
+  background: white;
+  /* subtle separation from list when stuck */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
+  z-index: 1;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .btn-enroll-mobile {
@@ -237,5 +259,7 @@
   .mobile-menu {
     width: 100%;
     padding: 1.5rem;
+    height: 100dvh;
+    max-height: 100dvh;
   }
 }
