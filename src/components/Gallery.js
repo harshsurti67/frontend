@@ -19,7 +19,6 @@ const Gallery = () => {
   const filters = ['All', 'Activities', 'Learning', 'Daily Life'];
 
   useEffect(() => {
-    // Set mock data immediately for development
     const mockData = [
           {
             id: 1,
@@ -64,28 +63,35 @@ const Gallery = () => {
             category: 'Daily Life'
           }
         ];
-    
-    setGalleryItems(mockData);
-    setFilteredItems(mockData);
-    setLoading(false);
-    
-    // Try to fetch from API in background
-    const fetchGallery = async () => {
+
+    const fetchGalleryItems = async () => {
       try {
+        setLoading(true);
         const response = await apiService.getGallery();
+        console.log('Gallery API Response:', response.data); // Debug log
         const items = response.data?.results || response.data;
-        if (Array.isArray(items)) {
+        if (Array.isArray(items) && items.length > 0) {
+          console.log('Gallery setting API data:', items); // Debug log
           setGalleryItems(items);
           setFilteredItems(items);
+          setError(null);
+        } else {
+          console.log('Gallery using mock data'); // Debug log
+          setGalleryItems(mockData);
+          setFilteredItems(mockData);
         }
-        setError(null);
       } catch (err) {
         console.error('Error fetching gallery:', err);
         setError('Failed to load gallery');
+        console.log('Gallery using mock data due to error'); // Debug log
+        setGalleryItems(mockData);
+        setFilteredItems(mockData);
+      } finally {
+        setLoading(false);
       }
     };
     
-    fetchGallery();
+    fetchGalleryItems();
   }, []);
 
   useEffect(() => {

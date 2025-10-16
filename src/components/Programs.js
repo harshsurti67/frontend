@@ -44,27 +44,27 @@ const Programs = () => {
       try {
         setLoading(true);
         const response = await apiService.getPrograms();
+        console.log('API Response:', response.data); // Debug log
         const data = response.data?.results || response.data;
         if (Array.isArray(data) && data.length > 0) {
+          console.log('Setting programs from API:', data); // Debug log
           setPrograms(data);
         } else {
+          console.log('No API data, using mock programs'); // Debug log
           setPrograms(mockPrograms);
         }
         setError(null);
       } catch (err) {
         console.error('Error fetching programs:', err);
         setError('Failed to load programs');
+        console.log('Using mock programs due to error'); // Debug log
         setPrograms(mockPrograms);
       } finally {
         setLoading(false);
       }
     };
 
-    // Set mock data immediately for development
-    setPrograms(mockPrograms);
-    setLoading(false);
-    
-    // Try to fetch from API in background
+    // Fetch from API directly - don't set mock data first
     fetchPrograms();
   }, []);
 

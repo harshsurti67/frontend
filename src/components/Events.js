@@ -16,44 +16,50 @@ const Events = () => {
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   useEffect(() => {
+    const mockData = [
+      {
+        id: 1,
+        title: 'Spring Art Exhibition',
+        description: 'Come see the amazing artwork created by our talented students! The exhibition will showcase paintings, drawings, and crafts from all age groups.',
+        date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString(),
+        image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 2,
+        title: 'Parent-Teacher Conference',
+        description: 'Scheduled meetings with teachers to discuss your child\'s progress, achievements, and areas for development. Please book your appointment.',
+        date: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000).toISOString(),
+        image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 3,
+        title: 'Summer Camp Registration',
+        description: 'Registration opens for our exciting summer camp program! Activities include swimming, arts and crafts, field trips, and educational games.',
+        date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+        image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      }
+    ];
+
     const fetchEvents = async () => {
       try {
         setLoading(true);
         const response = await apiService.getEvents();
+        console.log('Events API Response:', response.data); // Debug log
         const items = response.data?.results || response.data;
         
         if (Array.isArray(items) && items.length > 0) {
+          console.log('Events setting API data:', items); // Debug log
           setEvents(items);
           setError(null);
         } else {
-          // Fallback to mock data only if API returns no data
-          const mockData = [
-            {
-              id: 1,
-              title: 'Spring Art Exhibition',
-              description: 'Come see the amazing artwork created by our talented students! The exhibition will showcase paintings, drawings, and crafts from all age groups.',
-              date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString(),
-              image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-            },
-            {
-              id: 2,
-              title: 'Parent-Teacher Conference',
-              description: 'Scheduled meetings with teachers to discuss your child\'s progress, achievements, and areas for development. Please book your appointment.',
-              date: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000).toISOString(),
-              image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-            },
-            {
-              id: 3,
-              title: 'Summer Camp Registration',
-              description: 'Registration opens for our exciting summer camp program! Activities include swimming, arts and crafts, field trips, and educational games.',
-              date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-              image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-            }
-          ];
+          console.log('Events using mock data'); // Debug log
           setEvents(mockData);
         }
       } catch (err) {
         console.error('Error fetching events:', err);
+        setError('Failed to load events');
+        console.log('Events using mock data due to error'); // Debug log
+        setEvents(mockData);
         setError('Failed to load events');
         // Set mock data as fallback
         const mockData = [

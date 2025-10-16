@@ -34,11 +34,19 @@ const SimplePrograms = () => {
     const fetchPrograms = async () => {
       try {
         const response = await apiService.getPrograms();
+        console.log('SimplePrograms API Response:', response.data); // Debug log
         // Limit to first 3 programs for home page
-        const data = response.data?.results || response.data || mockPrograms;
-        setPrograms(Array.isArray(data) ? data.slice(0, 3) : mockPrograms);
+        const data = response.data?.results || response.data;
+        if (Array.isArray(data) && data.length > 0) {
+          console.log('SimplePrograms setting API data:', data.slice(0, 3)); // Debug log
+          setPrograms(data.slice(0, 3));
+        } else {
+          console.log('SimplePrograms using mock data'); // Debug log
+          setPrograms(mockPrograms);
+        }
       } catch (error) {
         console.error('Error fetching programs:', error);
+        console.log('SimplePrograms using mock data due to error'); // Debug log
         setPrograms(mockPrograms);
       }
     };
